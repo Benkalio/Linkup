@@ -8,10 +8,10 @@ function HomePage(props) {
   return (
     <Fragment>
       <Head>
-        <title>React Meetups</title>
+        <title>Developer Meetups in Nigeria</title>
         <meta
           name='description'
-          content='Browse a huge list of highly active React meetups!'
+          content='Browse a huge list of highly active developer meetups to connect and network!'
         />
       </Head>
       <MeetupList meetups={props.meetups} />;
@@ -35,7 +35,8 @@ function HomePage(props) {
 export async function getStaticProps() {
   // fetch data from an API
   const client = await MongoClient.connect(
-    'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
+    'mongodb+srv://tenny:e8TOcwVU9FzSLFOW@cluster0.0ntge.mongodb.net/meetups?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useUnifiedTopology: true },
   );
   const db = client.db();
 

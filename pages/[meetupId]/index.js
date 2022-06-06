@@ -9,7 +9,7 @@ function MeetupDetails(props) {
     <Fragment>
       <Head>
         <title>{props.meetupData.title}</title>
-        <meta name='description' content={props.meetupData.description} />
+        <meta name='For meetup locations' content={props.meetupData.description} />
       </Head>
       <MeetupDetail
         image={props.meetupData.image}
@@ -24,8 +24,8 @@ function MeetupDetails(props) {
 export async function getStaticPaths() {
 
   const client = await MongoClient.connect(
+    'mongodb+srv://tenny:e8TOcwVU9FzSLFOW@cluster0.0ntge.mongodb.net/meetups?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true },
-    'mongodb+srv://tenny:e8TOcwVU9FzSLFOW@cluster0.0ntge.mongodb.net/meetups?retryWrites=true&w=majority'
   );
   const db = client.db();
 
@@ -49,7 +49,8 @@ export async function getStaticProps(context) {
   const meetupId = context.params.meetupId;
 
   const client = await MongoClient.connect(
-    'mongodb+srv://maximilian:TU6WdZF2EjFWsqUt@cluster0.ntrwp.mongodb.net/meetups?retryWrites=true&w=majority'
+    'mongodb+srv://tenny:e8TOcwVU9FzSLFOW@cluster0.0ntge.mongodb.net/meetups?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useUnifiedTopology: true },
   );
   const db = client.db();
 
